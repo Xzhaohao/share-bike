@@ -1,6 +1,7 @@
 #include "ini_config.h"
 #include "config_def.h"
 #include "logger.h"
+#include "protobuf/bike.pb.h"
 
 #define START_FAILED -1
 #define INIT_LOG_FAILED -2
@@ -9,6 +10,7 @@
 int main(int argc, char **argv) {
     if (argc < 2) {
         printf("please input share_bike <config file path> <log file path>!\n");
+        printf("example: ./share_bike ../../conf/application.ini ../../conf/alo/conf\n");
         return START_FAILED;
     }
 
@@ -26,13 +28,13 @@ int main(int argc, char **argv) {
     }
 
     st_env_config conf_args = config.get_config();
-    LOG_INFO("[database] ip: %s port: %d user: %s password: %s db: %s\n",
-             conf_args.db_ip.c_str(),
-             conf_args.db_port,
-             conf_args.db_user.c_str(),
-             conf_args.db_password.c_str(),
-             conf_args.db_name.c_str()
-    );
+//    LOG_INFO("[database] ip: %s port: %d user: %s password: %s db: %s\n",
+//             conf_args.db_ip.c_str(),
+//             conf_args.db_port,
+//             conf_args.db_user.c_str(),
+//             conf_args.db_password.c_str(),
+//             conf_args.db_name.c_str()
+//    );
 
     return 0;
 }
