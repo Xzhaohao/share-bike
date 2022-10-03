@@ -507,7 +507,7 @@ mobile_request::mobile_request(const mobile_request& from)
     _impl_.mobile_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_mobile()) {
-    _this->_impl_.mobile_.Set(from._internal_mobile(), 
+    _this->_impl_.mobile_.Set(from._internal_mobile(),
       _this->GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:tutorial.mobile_request)
@@ -737,7 +737,7 @@ mobile_response::mobile_response(const mobile_response& from)
     _impl_.data_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_data()) {
-    _this->_impl_.data_.Set(from._internal_data(), 
+    _this->_impl_.data_.Set(from._internal_data(),
       _this->GetArenaForAllocation());
   }
   ::memcpy(&_impl_.code_, &from._impl_.code_,
@@ -1047,7 +1047,7 @@ login_request::login_request(const login_request& from)
     _impl_.mobile_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_mobile()) {
-    _this->_impl_.mobile_.Set(from._internal_mobile(), 
+    _this->_impl_.mobile_.Set(from._internal_mobile(),
       _this->GetArenaForAllocation());
   }
   _this->_impl_.icode_ = from._impl_.icode_;
@@ -1323,7 +1323,7 @@ login_response::login_response(const login_response& from)
     _impl_.desc_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_desc()) {
-    _this->_impl_.desc_.Set(from._internal_desc(), 
+    _this->_impl_.desc_.Set(from._internal_desc(),
       _this->GetArenaForAllocation());
   }
   _this->_impl_.code_ = from._impl_.code_;
@@ -1581,7 +1581,7 @@ recharge_request::recharge_request(const recharge_request& from)
     _impl_.mobile_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_mobile()) {
-    _this->_impl_.mobile_.Set(from._internal_mobile(), 
+    _this->_impl_.mobile_.Set(from._internal_mobile(),
       _this->GetArenaForAllocation());
   }
   _this->_impl_.amount_ = from._impl_.amount_;
@@ -1861,7 +1861,7 @@ recharge_response::recharge_response(const recharge_response& from)
     _impl_.desc_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_desc()) {
-    _this->_impl_.desc_.Set(from._internal_desc(), 
+    _this->_impl_.desc_.Set(from._internal_desc(),
       _this->GetArenaForAllocation());
   }
   ::memcpy(&_impl_.code_, &from._impl_.code_,
@@ -2167,7 +2167,7 @@ account_balance_request::account_balance_request(const account_balance_request& 
     _impl_.mobile_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_mobile()) {
-    _this->_impl_.mobile_.Set(from._internal_mobile(), 
+    _this->_impl_.mobile_.Set(from._internal_mobile(),
       _this->GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:tutorial.account_balance_request)
@@ -2397,7 +2397,7 @@ account_balance_response::account_balance_response(const account_balance_respons
     _impl_.desc_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_desc()) {
-    _this->_impl_.desc_.Set(from._internal_desc(), 
+    _this->_impl_.desc_.Set(from._internal_desc(),
       _this->GetArenaForAllocation());
   }
   ::memcpy(&_impl_.code_, &from._impl_.code_,
@@ -2703,7 +2703,7 @@ list_account_records_request::list_account_records_request(const list_account_re
     _impl_.mobile_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_mobile()) {
-    _this->_impl_.mobile_.Set(from._internal_mobile(), 
+    _this->_impl_.mobile_.Set(from._internal_mobile(),
       _this->GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:tutorial.list_account_records_request)
@@ -3215,7 +3215,7 @@ list_account_records_response::list_account_records_response(const list_account_
     _impl_.desc_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_desc()) {
-    _this->_impl_.desc_.Set(from._internal_desc(), 
+    _this->_impl_.desc_.Set(from._internal_desc(),
       _this->GetArenaForAllocation());
   }
   _this->_impl_.code_ = from._impl_.code_;
@@ -3504,7 +3504,7 @@ list_travel_records_request::list_travel_records_request(const list_travel_recor
     _impl_.mobile_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_mobile()) {
-    _this->_impl_.mobile_.Set(from._internal_mobile(), 
+    _this->_impl_.mobile_.Set(from._internal_mobile(),
       _this->GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:tutorial.list_travel_records_request)
@@ -4028,7 +4028,7 @@ list_travel_records_response::list_travel_records_response(const list_travel_rec
     _impl_.desc_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_desc()) {
-    _this->_impl_.desc_.Set(from._internal_desc(), 
+    _this->_impl_.desc_.Set(from._internal_desc(),
       _this->GetArenaForAllocation());
   }
   ::memcpy(&_impl_.mileage_, &from._impl_.mileage_,

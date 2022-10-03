@@ -2,6 +2,10 @@
 #include "config_def.h"
 #include "logger.h"
 #include "protobuf/bike.pb.h"
+#include "event/events_def.h"
+#include <iostream>
+
+using namespace std;
 
 #define START_FAILED -1
 #define INIT_LOG_FAILED -2
@@ -28,13 +32,6 @@ int main(int argc, char **argv) {
     }
 
     st_env_config conf_args = config.get_config();
-//    LOG_INFO("[database] ip: %s port: %d user: %s password: %s db: %s\n",
-//             conf_args.db_ip.c_str(),
-//             conf_args.db_port,
-//             conf_args.db_user.c_str(),
-//             conf_args.db_password.c_str(),
-//             conf_args.db_name.c_str()
-//    );
 
     return 0;
 }
