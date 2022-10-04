@@ -3,7 +3,6 @@
 #include "logger.h"
 #include "protobuf/bike.pb.h"
 #include "event/events_def.h"
-#include <iostream>
 
 using namespace std;
 
