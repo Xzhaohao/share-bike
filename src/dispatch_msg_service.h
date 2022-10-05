@@ -14,7 +14,7 @@
 #include "event/event_type.h"
 #include "event/event_handler.h"
 #include "threadpool/thread_pool.h"
-#include "NetworkInterface.h"
+#include "network_interface.h"
 
 class DispatchMsgService {
 protected:

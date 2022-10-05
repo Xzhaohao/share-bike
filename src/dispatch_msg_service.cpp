@@ -38,7 +38,7 @@ void DispatchMsgService::close() {
 }
 
 void DispatchMsgService::subscribe(u32 eid, iEventHandler *handler) {
-    T_EventHandlersMap::iterator iter = subscribers_.find(eid);
+    auto iter = subscribers_.find(eid);
     if (iter != subscribers_.end()) {
 
         auto hdl_iter = std::find(iter->second.begin(), iter->second.end(), handler);
@@ -65,7 +65,7 @@ i32 DispatchMsgService::enqueue(iEvent *ev) {
     if (nullptr == ev) {
         return -1;
     }
-    ConnectSession *cs = (ConnectSession *) ev->get_args();
+    auto *cs = (ConnectSession *) ev->get_args();
     LOG_DEBUG("将客户端[%s][%p]请求投递到任务队列中.......", cs->remote_ip, cs->bev);
     thread_task_t *task = thread_task_alloc(0);
     task->handler = DispatchMsgService::svc;
@@ -93,8 +93,8 @@ void DispatchMsgService::svc(void *argv) {
             rsp = new ExitRspEv();
             rsp->set_args(ev->get_args());
         }
-        //
-        ConnectSession *cs = (ConnectSession *) rsp->get_args();
+
+        auto *cs = (ConnectSession *) rsp->get_args();
         LOG_DEBUG("正在将事件[%s][%p]放入响应事件队列当中.......", cs->remote_ip, cs->bev);
         thread_mutex_lock(&queue_mutext);
         int size = rsp->Bytesize();
@@ -131,7 +131,6 @@ iEvent *DispatchMsgService::process(const iEvent *ev) {
 
         rsp = handler->handle(ev);//可以使用vector或list返回多个 rsp
     }
-    //这里
     return rsp;
 }
 
@@ -253,7 +252,7 @@ void DispatchMsgService::handleAllResponseEvent(NetworkInterface *interface) {
                 sendPesponseMessage(ev, EVENT_LOGIN_RSP, interface);
             } else if (EventId == EVNET_EXIT_RSP) {// 退出响应
                 LOG_DEBUG("退出响应--ev->get_eid() == EVNET_EXIT_RSP\n");
-                ConnectSession *cs = (ConnectSession *) ev->get_args();
+                auto *cs = (ConnectSession *) ev->get_args();
                 cs->response = ev;
                 interface->send_response_message(cs);
             }
@@ -262,7 +261,7 @@ void DispatchMsgService::handleAllResponseEvent(NetworkInterface *interface) {
 }
 
 void DispatchMsgService::sendPesponseMessage(iEvent *ev, EventID Eid, NetworkInterface *interface) {
-    ConnectSession *cs = (ConnectSession *) ev->get_args();
+    auto *cs = (ConnectSession *) ev->get_args();
     cs->response = ev;
 
     // 系列化请求数据

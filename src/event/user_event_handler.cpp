@@ -1,4 +1,5 @@
 #include "user_event_handler.h"
+#include "../dispatch_msg_service.h"
 #include <arpa/inet.h>
 #include <cassert>
 #include <cerrno>
@@ -15,15 +16,15 @@
 
 UserEventHandler::UserEventHandler() : iEventHandler("UserEventHandler") {
     // 未来需要订阅事件的处理
-    // DispatchMsgService::getInstance()->subscribe(EVENT_GET_MOBILE_CODE_REQ, this);
-    // DispatchMsgService::getInstance()->subscribe(EVENT_LOGIN_REQ, this);
+    DispatchMsgService::getInstance()->subscribe(EVENT_GET_MOBILE_CODE_REQ, this);
+    DispatchMsgService::getInstance()->subscribe(EVENT_LOGIN_REQ, this);
     thread_mutex_create(&pm_);
 }
 
 UserEventHandler::~UserEventHandler() {
     // 未来需要实现退定事件的处理
-    // DispatchMsgService::getInstance()->unsubscribe(EVENT_GET_MOBILE_CODE_REQ, this);
-    // DispatchMsgService::getInstance()->unsubscribe(EVENT_LOGIN_REQ, this);
+    DispatchMsgService::getInstance()->unsubscribe(EVENT_GET_MOBILE_CODE_REQ, this);
+    DispatchMsgService::getInstance()->unsubscribe(EVENT_LOGIN_REQ, this);
     thread_mutex_destroy(&pm_);
 }
 
